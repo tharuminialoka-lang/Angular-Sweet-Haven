@@ -1,0 +1,34 @@
+.category-card {
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+}
+
+.category-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.175) !important;
+  border-color: var(--primary-color);
+}
+
+.category-card.selected {
+  border: 2px solid var(--primary-color) !important;
+  transform: translateY(-5px);
+  box-shadow: 0 0.5rem 1.5rem rgba(111, 66, 193, 0.3) !important;
+}
+
+.btn {
+  transition: all 0.3s ease;
+  border-width: 2px;
+}
+
+.card-img-top-container {
+  overflow: hidden;
+}
+
+.card-img-top {
+  transition: transform 0.3s ease;
+}
+
+.category-card:hover .card-img-top {
+  transform: scale(1.05);
+}

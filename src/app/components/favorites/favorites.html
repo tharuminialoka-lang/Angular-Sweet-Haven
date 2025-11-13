@@ -1,0 +1,39 @@
+<div class="favorites-panel" [class.show]="isFavoritesVisible">
+  <div class="favorites-header">
+    <h4>Your Favorites</h4>
+    <button class="btn-close" (click)="closeFavorites()">
+      <i class="fas fa-times"></i>
+    </button>
+  </div>
+  
+  <div class="favorites-body">
+    <div *ngIf="favorites.length === 0" class="empty-favorites">
+      <i class="far fa-heart fa-2x mb-3"></i>
+      <p>No favorites yet</p>
+    </div>
+    
+    <div *ngFor="let item of favorites" class="favorite-item">
+      <div class="favorite-item-image">
+        <img [src]="item.image" [alt]="item.name">
+      </div>
+      <div class="favorite-item-details">
+        <h6>{{ item.name }}</h6>
+        <p class="price">LKR.{{ item.price }}</p>
+      </div>
+      <button class="btn-remove" (click)="removeFromFavorites(item)">
+        <i class="fas fa-trash"></i>
+      </button>
+    </div>
+  </div>
+  
+  <div class="favorites-footer" *ngIf="favorites.length > 0">
+    <div class="total-price">
+      Total Items: {{ favorites.length }}
+    </div>
+    <button class="btn btn-primary w-100">
+      View All Favorites
+    </button>
+  </div>
+</div>
+
+<div class="favorites-backdrop" [class.show]="isFavoritesVisible" (click)="closeFavorites()"></div>

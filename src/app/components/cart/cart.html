@@ -1,0 +1,123 @@
+<!-- Cart Icon in Header -->
+<div class="cart-icon position-relative text-dark fw-medium me-lg-4">
+  <a href="#" class="text-dark position-relative" (click)="toggleCart(); $event.preventDefault()">
+    <i class="fas fa-shopping-cart"></i>
+    <span *ngIf="cartItemCount > 0" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+      {{ cartItemCount }}
+    </span>
+  </a>
+</div>
+
+<!-- Cart Sidebar -->
+<div class="cart-sidebar" [class.open]="isCartOpen">
+  <div class="cart-overlay" (click)="closeCart()"></div>
+  
+  <div class="cart-content">
+    <!-- Cart Header -->
+    <div class="cart-header d-flex justify-content-between align-items-center p-3 border-bottom">
+      <h5 class="mb-0 fw-bold">
+        <i class="fas fa-shopping-cart me-2"></i>
+        Shopping Cart ({{ cartItemCount }})
+      </h5>
+      <button class="btn-close" (click)="closeCart()"></button>
+    </div>
+
+    <!-- Cart Items -->
+    <div class="cart-items p-3">
+      <div *ngIf="cartItems.length === 0" class="empty-cart text-center py-5">
+        <i class="fas fa-shopping-cart display-1 text-muted mb-3"></i>
+        <p class="text-muted">Your cart is empty</p>
+        <button class="btn btn-primary mt-2" (click)="closeCart()">
+          Start Shopping
+        </button>
+      </div>
+
+      <div *ngFor="let item of cartItems" class="cart-item mb-3 p-3 border rounded">
+        <!-- Item Image and Details -->
+        <div class="d-flex align-items-start mb-3">
+          <!-- Product Image -->
+          <div class="cart-item-image me-3">
+            <img [src]="item.sweet.image" 
+                 [alt]="item.sweet.name" 
+                 class="rounded"
+                 style="width: 80px; height: 80px; object-fit: cover;">
+          </div>
+          
+          <!-- Item Details -->
+          <div class="cart-item-details flex-grow-1">
+            <h6 class="fw-bold mb-1 text-dark">{{ item.sweet.name }}</h6>
+            <p class="text-muted small mb-1">
+              {{ getCategoryName(item.sweet.category) }}
+            </p>
+            <p class="text-primary fw-bold mb-0">
+              LKR.{{ item.sweet.price }} each
+            </p>
+          </div>
+        </div>
+
+        <!-- Quantity Controls and Total -->
+        <div class="d-flex justify-content-between align-items-center">
+          <!-- Quantity Controls -->
+          <div class="quantity-controls d-flex align-items-center">
+            <button class="btn btn-sm btn-outline-secondary" 
+                    (click)="decreaseQuantity(item)"
+                    [disabled]="item.quantity <= 1"
+                    title="Decrease quantity">
+              <i class="fas fa-minus"></i>
+            </button>
+            <span class="mx-3 fw-semibold">{{ item.quantity }}</span>
+            <button class="btn btn-sm btn-outline-secondary" 
+                    (click)="increaseQuantity(item)"
+                    title="Increase quantity">
+              <i class="fas fa-plus"></i>
+            </button>
+          </div>
+          
+          <!-- Item Total and Remove -->
+          <div class="d-flex align-items-center">
+            <span class="text-primary fw-bold me-3">
+              ${{ (item.sweet.price * item.quantity).toFixed(2) }}
+            </span>
+            <button class="btn btn-sm btn-outline-danger" 
+                    (click)="removeItem(item.sweet.id)"
+                    title="Remove item">
+              <i class="fas fa-trash"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Cart Footer -->
+    <div *ngIf="cartItems.length > 0" class="cart-footer border-top p-3">
+      <div class="price-summary mb-3">
+        <div class="d-flex justify-content-between mb-2">
+          <span class="text-muted">Subtotal</span>
+          <span class="fw-semibold">${{ getSubtotal().toFixed(2) }}</span>
+        </div>
+        <div class="d-flex justify-content-between mb-2">
+          <span class="text-muted">Shipping</span>
+          <span class="fw-semibold">${{ getShipping().toFixed(2) }}</span>
+        </div>
+        <hr>
+        <div class="d-flex justify-content-between mb-3">
+          <span class="fw-bold fs-5">Total</span>
+          <span class="fw-bold text-primary fs-5">${{ getTotal().toFixed(2) }}</span>
+        </div>
+      </div>
+
+      <div class="cart-actions">
+        <button class="btn btn-primary w-100 mb-2 fw-semibold py-2" 
+                (click)="proceedToCheckout()">
+          <i class="fas fa-credit-card me-2"></i>
+          Proceed to Checkout
+        </button>
+        <button class="btn btn-outline-secondary w-100 py-2" 
+                (click)="continueShopping()">
+          <i class="fas fa-shopping-bag me-2"></i>
+          Continue Shopping
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,156 @@
+<header class="sweet-haven-header">
+<nav class="navbar navbar-expand-lg navbar-light bg-white border-bottom">
+  <div class="container">
+
+    <!-- Center: Brand Logo -->
+      <a class="navbar-brand fw-bold text-dark fs-4 d-lg-none" href="#" style="font-family: 'Georgia', serif;">
+      🍬 {{ brandName }}
+    </a>
+     <!-- Brand Name (Visible on desktop) -->
+        <a class="nav-link fw-bold text-dark fs-4 ms-3 d-none d-lg-block" href="#" style="font-family: 'Georgia', serif;">
+         🍬  {{ brandName }}
+        </a>
+    
+    <button class="navbar-toggler" type="button" 
+            data-bs-toggle="collapse" 
+            data-bs-target="#navbarNav"
+            aria-controls="navbarNav" 
+            aria-expanded="false" 
+            aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    
+     <div class="collapse navbar-collapse" id="navbarNav">
+      <!-- Left side: Navigation Links -->
+      <div class="navbar-nav me-auto">
+        <a class="nav-link" (click)="scrollToSection('hero')">Home</a>
+      <a class="nav-link" (click)="scrollToSection('categories')">Categories</a>
+      <a class="nav-link" (click)="scrollToSection('featured-sweets')">Featured</a>
+      <a class="nav-link" (click)="scrollToSection('about')">About</a>
+      </div>
+
+    
+
+          <!-- Center: Search Bar -->
+    <div class="navbar-nav mx-auto">
+      <div class="search-container position-relative">
+        <input type="text" 
+               class="form-control search-input border-0 bg-light" 
+               [(ngModel)]="searchTerm"
+               (focus)="onSearchFocus()"
+               (blur)="onSearchBlur()"
+               (keyup.enter)="performSearch()"
+               placeholder="Search for sweets..."
+               [class.search-focused]="isSearchFocused"
+               style="width: 200px; padding-left: 40px; padding-right: 40px;">
+        <span class="position-absolute start-0 top-50 translate-middle-y ms-3 text-muted">
+          <i class="fas fa-search"></i>
+        </span>
+        <span *ngIf="searchTerm" 
+              class="position-absolute end-0 top-50 translate-middle-y me-3 text-muted"
+              (click)="clearSearch()"
+              style="cursor: pointer;">
+          <i class="fas fa-times"></i>
+        </span>
+      </div>
+    </div>
+
+    <!-- Right side: Cart and Brand -->
+    <div class="navbar-nav ms-auto d-flex align-items-center me-3">
+      <!-- Cart Component -->
+      <app-cart></app-cart>
+      <div class="position-relative text-dark fw-medium me-lg-4">
+        <a href="#" class="text-dark user-profile-trigger" (click)="toggleProfile(); $event.preventDefault()">
+          <i class="fas fa-user" ></i>
+        </a>
+      </div>
+        
+        <!-- Heart Icon -->
+      <button class="btn btn-outline-light me-2 position-relative" (click)="toggleFavorites()">
+        <i class="fas fa-heart"></i>
+        <span *ngIf="favoritesCount > 0" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+          {{ favoritesCount }}
+        </span>
+      </button>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- Profile Sidebar -->
+<div class="profile-sidebar" [class.active]="isProfileOpen">
+  <div class="profile-overlay" (click)="closeProfile()"></div>
+  <div class="profile-content">
+    <!-- Profile Header -->
+    <div class="profile-header">
+      <button class="profile-close-btn" (click)="closeProfile()">
+        <i class="fas fa-times"></i>
+      </button>
+      <h3 class="profile-title">My Profile</h3>
+    </div>
+
+    <!-- User Info -->
+    <div class="user-info">
+      <div class="user-avatar">
+        <span class="avatar-icon">{{ userProfile.avatar }}</span>
+      </div>
+      <div class="user-details">
+        <h4 class="user-name">{{ userProfile.name }}</h4>
+        <p class="user-email">{{ userProfile.email }}</p>
+        <div class="user-stats">
+          <div class="stat-item">
+            <span class="stat-number">{{ userProfile.favoriteItems }}</span>
+            <span class="stat-label">Favorites</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number">{{ userProfile.ordersCount }}</span>
+            <span class="stat-label">Orders</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number">{{ userProfile.memberSince }}</span>
+            <span class="stat-label">Member Since</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Profile Menu -->
+    <div class="profile-menu">
+      <div class="menu-item" (click)="viewOrders()">
+        <i class="fas fa-shopping-bag menu-icon"></i>
+        <span class="menu-text">My Orders</span>
+        <i class="fas fa-chevron-right menu-arrow"></i>
+      </div>
+      
+      <div class="menu-item" (click)="viewFavorites()">
+        <i class="fas fa-heart menu-icon" style="color: #4607f3;"></i>
+        <span class="menu-text">My Favorites</span>
+        <i class="fas fa-chevron-right menu-arrow"></i>
+      </div>
+      
+      <div class="menu-item" (click)="viewSettings()">
+        <i class="fas fa-cog menu-icon"></i>
+        <span class="menu-text">Account Settings</span>
+        <i class="fas fa-chevron-right menu-arrow"></i>
+      </div>
+      
+      <div class="menu-item" (click)="signIn()">
+        <i class="fas fa-user-circle menu-icon"></i>
+        <span class="menu-text">Sign In</span>
+        <i class="fas fa-chevron-right menu-arrow"></i>
+      </div>
+    </div>
+
+    <!-- Sign Out Button -->
+    <div class="profile-footer">
+      <button class="btn btn-outline-danger btn-sm sign-out-btn" (click)="signOut()">
+        <i class="fas fa-sign-out-alt"></i>
+        Sign Out
+      </button>
+    </div>
+  </div>
+</div>
+
+</header>
+
+

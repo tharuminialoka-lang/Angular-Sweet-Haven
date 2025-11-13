@@ -1,0 +1,263 @@
+/* Import Bootstrap */
+/*@import '~bootstrap/dist/css/bootstrap.min.css';
+
+/* Remove or comment out this line */
+/* @import '~bootstrap/dist/css/bootstrap.min.css'; */
+
+/* Keep your other styles */
+/* Custom Variables */
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Georgia:wght@400;700&family=Inter:wght@300;400;500;600&display=swap');
+
+/* Global Styles */
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: #ffffff;
+}
+
+/* Custom Navbar Styles */
+.navbar-light .navbar-nav .nav-link {
+  color: #2d3748;
+  font-weight: 500;
+}
+
+.navbar-light .navbar-nav .nav-link:hover {
+  color: #6f42c1;
+}
+
+/* Smooth transitions */
+* {
+  transition: all 0.3s ease;
+}
+
+/* Brand name gradient effect */
+.gradient-text {
+  background: linear-gradient(135deg, #6f42c1 0%, #e83e8c 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+:root {
+  --primary-color: #6f42c1;
+  --secondary-color: #e83e8c;
+  --accent-color: #20c997;
+  --dark-color: #343a40;
+  --light-color: #f8f9fa;
+}
+
+/* Global Styles */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+}
+
+/* Hero Section */
+.hero-section {
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color)) !important;
+  min-height: 70vh;
+  display: flex;
+  align-items: center;
+}
+
+.min-vh-50 {
+  min-height: 50vh;
+}
+
+/* Cards */
+.card {
+  transition: all 0.3s ease;
+  border: none;
+}
+
+.shadow-hover:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.175) !important;
+}
+
+.sweet-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.175) !important;
+}
+
+/* Buttons */
+.btn-primary {
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+  transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+  background-color: #5a32a3;
+  border-color: #5a32a3;
+  transform: translateY(-2px);
+}
+
+.btn-outline-primary {
+  color: var(--primary-color);
+  border-color: var(--primary-color);
+}
+
+.btn-outline-primary:hover {
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+}
+
+/* Steps Section */
+.step-card {
+  border-left: 4px solid var(--primary-color);
+}
+
+/* Section Titles */
+.section-title {
+  position: relative;
+  display: inline-block;
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 3px;
+  background: var(--primary-color);
+  border-radius: 2px;
+}
+
+/* Badges */
+.badge {
+  font-size: 0.75rem;
+  padding: 0.5em 0.75em;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .hero-section {
+    text-align: center;
+    min-height: 60vh;
+  }
+  
+  .display-4 {
+    font-size: 2.5rem;
+  }
+  
+  .step-card {
+    text-align: center;
+     display: grid;
+}
+  }
+  /* Add these styles to your existing CSS */
+
+/* Filter buttons */
+.btn-outline-primary {
+  border-width: 2px;
+}
+
+/* Smooth transitions */
+.category-card, .sweet-card {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Empty state styling */
+.empty-state {
+  opacity: 0.7;
+}
+
+/* Badge styles */
+.badge {
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+/* Active category card */
+.category-card.selected {
+  box-shadow: 0 0.5rem 1.5rem rgba(111, 66, 193, 0.3) !important;
+}
+.category-card {
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.category-card:hover {
+  transform: translateY(-5px);
+} 
+/* Smooth scrolling for anchor links */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Enhanced button styles */
+.btn {
+  position: relative;
+  overflow: hidden;
+}
+
+.btn:active {
+  transform: translateY(1px);
+}
+
+/* Loading animation for category changes */
+.sweets-grid {
+  transition: opacity 0.3s ease;
+}
+
+.sweets-grid.loading {
+  opacity: 0.6;
+}
+
+/* Badge enhancements */
+.badge {
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+/* Alert enhancements */
+.alert {
+  border: none;
+  border-radius: 0.75rem;
+}
+
+
+
+/* Enhanced mobile responsiveness */
+@media (max-width: 576px) {
+  .container {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  
+  .navbar-brand {
+    font-size: 1.25rem !important;
+  }
+  
+  .navbar-toggler {
+    padding: 0.2rem 0.4rem;
+  }
+}
+
+/* Smooth transitions for navbar */
+.navbar-collapse {
+  transition: all 0.3s ease-in-out;
+}
+
+/* Prevent body scroll when mobile menu is open */
+body.mobile-menu-open {
+  overflow: hidden;
+}
+
+/* Enhanced focus states for accessibility */
+.nav-link:focus {
+  outline: 2px solid #6f42c1;
+  outline-offset: 2px;
+}
+
+.navbar-toggler:focus {
+  outline: 2px solid #6f42c1;
+  outline-offset: 2px;
+}
+
+/* Loading animation for better UX */
+.navbar-collapse.collapsing {
+  transition: height 0.35s ease;
+}

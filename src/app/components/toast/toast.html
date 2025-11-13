@@ -1,0 +1,14 @@
+<div class="toast-container position-fixed top-0 end-0 p-3" style="z-index: 9999;">
+  <div *ngFor="let toast of toasts" 
+       [class]="getToastClass(toast)"
+       role="alert">
+    <div class="d-flex align-items-center">
+      <i [class]="getToastIcon(toast)" class="me-2"></i>
+      <span class="flex-grow-1">{{ toast.message }}</span>
+      <button type="button" 
+              class="btn-close ms-2" 
+              (click)="removeToast(toast.id)"
+              aria-label="Close"></button>
+    </div>
+  </div>
+</div>

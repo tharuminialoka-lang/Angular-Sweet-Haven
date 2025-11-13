@@ -1,0 +1,487 @@
+.quick-filter .btn {
+  font-size: 0.8rem;
+  padding: 0.25rem 0.75rem;
+}
+
+.category-description-card {
+  border-left: 4px solid var(--primary-color);
+}
+
+.empty-state {
+  opacity: 0.8;
+  padding: 3rem 1rem;
+}
+
+.sweet-card {
+  transition: all 0.3s ease;
+}
+
+.sweet-card:hover {
+  transform: translateY(-5px);
+}
+
+.text-center{
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color)) !important;
+}
+
+.text-center1{
+  text-align: center;
+  border-radius: 15px;
+}
+
+/* Sweet Card Hover Effects */
+.sweet-card {
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.sweet-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15) !important;
+}
+
+.sweet-image-container {
+  overflow: hidden;
+  border-radius: 10px 10px 0 0;
+}
+
+.sweet-image-container img {
+  transition: transform 0.3s ease;
+}
+
+.sweet-card:hover .sweet-image-container img {
+  transform: scale(1.05);
+}
+
+/* Quick View Overlay */
+.quick-view-overlay {
+  opacity: 0;
+  transition: all 0.3s ease;
+  z-index: 2;
+}
+
+.sweet-card:hover .quick-view-overlay {
+  opacity: 1;
+}
+
+.quick-view-text {
+  font-size: 0.8rem;
+  font-weight: 600;
+  white-space: nowrap;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Category Badge */
+.category-badge .badge {
+  font-size: 0.7rem;
+  padding: 6px 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* Card Body */
+.card-body {
+  padding: 1.5rem;
+}
+
+.card-title {
+  font-size: 1.2rem;
+  transition: color 0.3s ease;
+}
+
+.sweet-card:hover .card-title {
+  color: #6f42c1 !important;
+}
+
+/* Add to Cart Button */
+.btn-primary {
+  background: linear-gradient(135deg, #6f42c1 0%, #e83e8c 100%);
+  border: none;
+  border-radius: 25px;
+  padding: 10px 20px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(111, 66, 193, 0.3);
+}
+
+/* Product Detail Modal */
+.product-detail-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 20px;
+}
+
+.product-detail-modal {
+  background: white;
+  border-radius: 15px;
+  max-width: 700px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+}
+
+.close-btn {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: #666;
+  cursor: pointer;
+  z-index: 10;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.close-btn:hover {
+  background: #f8f9fa;
+  color: #333;
+}
+
+/* Image on Top - Changed from grid to flex column */
+.product-detail-content {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  padding: 30px;
+}
+
+.product-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.main-image {
+  width: 100%;
+  height: 350px;
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.product-info {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.product-header {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.product-name {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #333;
+  margin: 0;
+  background: linear-gradient(135deg, #6f42c1 0%, #e83e8c 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.product-category {
+  background: #6f42c1;
+  color: white;
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  align-self: flex-start;
+}
+
+.product-description {
+  color: #666;
+  line-height: 1.6;
+  font-size: 1rem;
+  margin: 0;
+  font-style: italic;
+}
+
+.product-price {
+  display: flex;
+  align-items: center;
+  padding: 15px 0;
+  border-top: 1px solid #e9ecef;
+  border-bottom: 1px solid #e9ecef;
+}
+
+.price {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #6f42c1;
+}
+
+/* Ingredients Section - Improved List */
+.ingredients-section {
+  padding: 15px 0;
+  border-bottom: 1px solid #e9ecef;
+}
+
+.ingredients-section h3 {
+  color: #333;
+  margin-bottom: 12px;
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.ingredients-section h3 i {
+  color: #6f42c1;
+}
+
+.ingredients-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 8px;
+}
+
+.ingredients-list li {
+  padding: 8px 12px;
+  background: #f8f9fa;
+  border-radius: 8px;
+  color: #555;
+  font-size: 0.95rem;
+  border-left: 3px solid #6f42c1;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.ingredients-list li:before {
+  content: "•";
+  color: #6f42c1;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+/* Nutrition Section - Enhanced Design */
+.nutrition-section {
+  padding: 15px 0;
+  border-bottom: 1px solid #e9ecef;
+}
+
+.nutrition-section h3 {
+  color: #333;
+  margin-bottom: 12px;
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.nutrition-section h3 i {
+  color: #e83e8c;
+}
+
+.nutrition-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  background: #f8f9fa;
+  padding: 15px;
+  border-radius: 10px;
+  border: 1px solid #e9ecef;
+}
+
+.nutrition-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 12px;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.nutrition-value {
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: #6f42c1;
+  margin-bottom: 4px;
+}
+
+.nutrition-label {
+  font-size: 0.85rem;
+  color: #666;
+  font-weight: 500;
+}
+
+/* Features Section */
+.features-section {
+  padding: 15px 0;
+}
+
+.features-section h3 {
+  color: #333;
+  margin-bottom: 12px;
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.features-section h3 i {
+  color: #e83e8c;
+}
+
+.features-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.features-list li {
+  padding: 8px 0;
+  color: #555;
+  position: relative;
+  padding-left: 25px;
+}
+
+.features-list li:before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: #6f42c1;
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+.add-to-cart-btn {
+  background: linear-gradient(135deg, #6f42c1 0%, #e83e8c 100%);
+  color: white;
+  border: none;
+  padding: 15px 30px;
+  border-radius: 25px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  transition: all 0.3s ease;
+  margin-top: 10px;
+}
+
+.add-to-cart-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(111, 66, 193, 0.3);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .sweet-card {
+    margin-bottom: 1.5rem;
+  }
+  
+  .quick-view-overlay {
+    display: none; /* Hide quick view on mobile */
+  }
+  
+  .card-body {
+    padding: 1rem;
+  }
+
+  .product-detail-content {
+    gap: 20px;
+    padding: 20px;
+  }
+
+  .main-image {
+    height: 250px;
+  }
+
+  .product-name {
+    font-size: 1.5rem;
+  }
+
+  .price {
+    font-size: 1.5rem;
+  }
+
+  .ingredients-section,
+  .nutrition-section,
+  .features-section {
+    padding: 12px 0;
+  }
+
+  .ingredients-list {
+    grid-template-columns: 1fr;
+  }
+
+  .nutrition-grid {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+}
+.sweet-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: none;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.sweet-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+}
+
+.btn-favorite {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: white;
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  z-index: 10;
+  transition: all 0.3s ease;
+}
+
+.btn-favorite:hover {
+  transform: scale(1.1);
+}
+
+.btn-favorite .fa-heart {
+  color: #dc3545;
+}
+
+.btn-favorite .fa-heart {
+  color: #6c757d;
+}
+
+.price {
+  color: #d4a574;
+  font-weight: 600;
+  font-size: 1.2rem;
+}

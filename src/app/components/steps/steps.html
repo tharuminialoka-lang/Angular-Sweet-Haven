@@ -1,0 +1,21 @@
+<section class="steps-section py-5 bg-light">
+  <div class="container">
+    <div class="row">
+      <div class="col-12" *ngFor="let step of steps">
+        <div class="step-card p-4 mb-4 bg-white rounded-3 shadow-sm">
+          <div class="row align-items-center">
+            <div class="col-md-1 text-center">
+              <div class="step-number display-4 fw-bold text-primary">
+                {{ step.number }}
+              </div>
+            </div>
+            <div class="col-md-11">
+              <h4 class="step-title fw-bold mb-2">{{ step.title }}</h4>
+              <p class="step-description text-muted mb-0">{{ step.description }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
