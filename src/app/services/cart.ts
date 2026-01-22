@@ -72,7 +72,7 @@ export class CartService {
   }
 
   getShipping(): number {
-    return 10.00; // Fixed shipping cost
+    return 300.00; // Fixed shipping cost
   }
 
   getTotal(): number {

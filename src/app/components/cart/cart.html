@@ -76,7 +76,7 @@
           <!-- Item Total and Remove -->
           <div class="d-flex align-items-center">
             <span class="text-primary fw-bold me-3">
-              ${{ (item.sweet.price * item.quantity).toFixed(2) }}
+              LKR.{{ (item.sweet.price * item.quantity).toFixed(2) }}
             </span>
             <button class="btn btn-sm btn-outline-danger" 
                     (click)="removeItem(item.sweet.id)"
@@ -93,16 +93,16 @@
       <div class="price-summary mb-3">
         <div class="d-flex justify-content-between mb-2">
           <span class="text-muted">Subtotal</span>
-          <span class="fw-semibold">${{ getSubtotal().toFixed(2) }}</span>
+          <span class="fw-semibold">LKR.{{ getSubtotal().toFixed(2) }}</span>
         </div>
         <div class="d-flex justify-content-between mb-2">
           <span class="text-muted">Shipping</span>
-          <span class="fw-semibold">${{ getShipping().toFixed(2) }}</span>
+          <span class="fw-semibold">LKR.{{ getShipping().toFixed(2) }}</span>
         </div>
         <hr>
         <div class="d-flex justify-content-between mb-3">
           <span class="fw-bold fs-5">Total</span>
-          <span class="fw-bold text-primary fs-5">${{ getTotal().toFixed(2) }}</span>
+          <span class="fw-bold text-primary fs-5">LKR.{{ getTotal().toFixed(2) }}</span>
         </div>
       </div>
 
